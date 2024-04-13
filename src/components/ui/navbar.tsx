@@ -61,7 +61,7 @@ export const Navbar = () => {
             </a>
           </p>
           <p className="mt-1">
-            Also check the code on{" "}
+            Check the code on{" "}
             <a
               href={currentLink?.code}
               target="_blank"
@@ -76,7 +76,7 @@ export const Navbar = () => {
 
       <div className="pb-4">
         <NavigationMenu>
-          <NavigationMenuList className="block md:flex md:space-x-4">
+          <NavigationMenuList className="block md:flex md:space-x-4 space-y-2 space-x-0 md:space-y-0">
             {link.map((item, index) => {
               const isCurrent = item.href === pathname;
 
