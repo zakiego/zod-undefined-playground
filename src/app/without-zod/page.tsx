@@ -46,13 +46,15 @@ export default async function Home() {
                   />
                   <p className="font-bold mt-4 text-gray-800">
                     <span className="font-semibold">Price:</span> $
-                    {product.price}
+                    {product.cost}
                   </p>
-                  <code className="text-xs bg-green-100 text-green-600 p-2 mt-2 rounded-md">
-                    {"Price: {product.price}"}
+                  <code className="text-xs bg-red-100 text-red-600 p-2 mt-2 rounded-md">
+                    {"Price: {product.cost}"}
                   </code>
-                  <div className="text-xs bg-green-100 text-green-600 p-2 mt-2 rounded-md">
-                    {"It use right key `price`"}
+                  <div className="text-xs bg-red-100 text-red-600 p-2 mt-2 rounded-md">
+                    {
+                      "It uses the wrong key `cost`, it should be `price`. The value of `cost` is undefined, so it will show as `Price: $undefined`. No error will be thrown. However, you need to throw an error if the key is not found"
+                    }
                   </div>
                   <p className="mt-2 text-sm text-gray-600">
                     {product.description}
