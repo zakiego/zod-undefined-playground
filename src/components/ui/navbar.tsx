@@ -1,6 +1,7 @@
 "use client";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 
 import {
@@ -45,6 +46,34 @@ export const Navbar = () => {
 
   return (
     <Suspense>
+      <Card className="mb-4">
+        <CardContent className="pt-2 pb-2 text-xs">
+          <p>
+            Read more about this issue on{" "}
+            <a
+              href="https://zakiego.com/articles/seni-menerima-data"
+              target="_blank"
+              rel="noopener noreferrer"
+              className=" text-blue-600 hover:underline font-semibold"
+            >
+              Seni Menerima Data dari Backend, untuk Frontend yang ingin Tidur
+              Nyenyak
+            </a>
+          </p>
+          <p className="mt-1">
+            Also check the code on{" "}
+            <a
+              href={currentLink?.code}
+              target="_blank"
+              rel="noopener noreferrer"
+              className=" text-blue-600 hover:underline font-semibold"
+            >
+              {currentLink?.codeLabel}
+            </a>
+          </p>
+        </CardContent>
+      </Card>
+
       <div className="pb-4">
         <NavigationMenu>
           <NavigationMenuList className="block md:flex md:space-x-4">
@@ -66,17 +95,6 @@ export const Navbar = () => {
             })}
           </NavigationMenuList>
         </NavigationMenu>
-
-        <div className="mt-4">
-          <a
-            href={currentLink?.code}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-blue-600 ml-2 hover:underline font-semibold"
-          >
-            View code: {currentLink?.codeLabel}
-          </a>
-        </div>
       </div>
     </Suspense>
   );
