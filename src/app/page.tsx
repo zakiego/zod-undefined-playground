@@ -9,6 +9,12 @@ import {
 } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Normal",
+};
+
 const getData = async () => {
   const resp = await fetch("https://dummyjson.com/products?limit=5").then(
     (res) => res.json(),

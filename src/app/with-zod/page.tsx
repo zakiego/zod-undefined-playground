@@ -12,6 +12,12 @@ import { Navbar } from "@/components/ui/navbar";
 import { z } from "zod";
 import { fromZodError } from "zod-validation-error";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "With zod",
+};
+
 const getData = async () => {
   const resp = await fetch("https://dummyjson.com/products?limit=5").then(
     (res) => res.json(),
@@ -63,7 +69,7 @@ export default async function Home() {
           <CardTitle>Error</CardTitle>
         </CardHeader>
         <CardContent>
-          <h1 className="text-red-600 font-semibold mt-4">
+          <h2 className="text-red-600 font-semibold mt-4">
             This is error format with{" "}
             <a
               href="https://www.npmjs.com/package/zod-validation-error"
@@ -71,18 +77,18 @@ export default async function Home() {
             >
               zod-validation-error
             </a>
-          </h1>
-          <pre className="mt-2 bg-red-100 p-4 rounded-md text-red-600 font-semibold whitespace-normal">
+          </h2>
+          <pre className="mt-2 bg-red-100 p-4 rounded-md text-red-600 font-semibold whitespace-normal text-sm">
             {JSON.stringify(readableError, null, 2)}
           </pre>
 
-          <h1 className="text-red-600 font-semibold">
+          <h2 className="text-red-600 font-semibold mt-5">
             Original error from{" "}
             <a href="https://zod.dev/" className="underline font-semibold">
               zod
             </a>
-          </h1>
-          <pre className="mt-2 bg-red-100 p-4 rounded-md text-red-600 font-semibold">
+          </h2>
+          <pre className="mt-2 bg-red-100 p-4 rounded-md text-red-600 font-semibold text-sm">
             {JSON.stringify(error, null, 2)}
           </pre>
         </CardContent>
